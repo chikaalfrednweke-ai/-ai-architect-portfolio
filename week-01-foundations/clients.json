@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Emeka Obi",
+        "business": "Obi & Partners Legal",
+        "location": "Abuja",
+        "product": "LexAI",
+        "status": "prospect"
+    },
+    {
+        "name": "Fatima Aliyu",
+        "business": "Aliyu Real Estate",
+        "location": "Abuja",
+        "product": "EstateIQ",
+        "status": "active"
+    },
+    {
+        "name": "Chukwudi Eze",
+        "business": "Eze Oil & Gas Ltd",
+        "location": "Abuja",
+        "product": "OpsGuard",
+        "status": "cold"
+    }
+]
