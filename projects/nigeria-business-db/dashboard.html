@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fred Baker's Automations — Nigeria Business DB</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0A0A0A; color: #E8E0D0; font-family: 'Cormorant Garamond', serif; font-size: 16px; }
+  header { background: #111111; border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; }
+  header h1 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: #E2C97E; }
+  header .subtitle { font-size: 12px; color: #7A6330; font-family: 'JetBrains Mono', monospace; }
+  .stats-bar { background: #111111; border-bottom: 1px solid rgba(201,168,76,0.1); padding: 1rem 3rem; display: flex; gap: 3rem; }
+  .stat { text-align: center; }
+  .stat .num { font-family: 'Cinzel', serif; font-size: 1.8rem; color: #C9A84C; display: block; }
+  .stat .lbl { font-size: 11px; color: #7A6330; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'JetBrains Mono', monospace; }
+  .container { padding: 2rem 3rem; }
+  .search-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  input, select { background: #111111; border: 1px solid rgba(201,168,76,0.2); color: #E8E0D0; padding: 0.7rem 1rem; border-radius: 6px; font-family: 'Cormorant Garamond', serif; font-size: 15px; outline: none; }
+  input:focus, select:focus { border-color: rgba(201,168,76,0.5); }
+  input { flex: 1; min-width: 200px; }
+  button { background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3); color: #C9A84C; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.05em; transition: all 0.2s; }
+  button:hover { background: rgba(201,168,76,0.2); }
+  .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .results-header h2 { font-family: 'Cinzel', serif; font-size: 1rem; color: #E2C97E; }
+  .count { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7A6330; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+  .card { background: #111111; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1.2rem; transition: border-color 0.2s; }
+  .card:hover { border-color: rgba(201,168,76,0.2); }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
+  .card h3 { font-family: 'Cinzel', serif; font-size: 13px; color: #E2C97E; line-height: 1.4; flex: 1; }
+  .badge { font-size: 10px; padding: 2px 8px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; white-space: nowrap; margin-left: 0.5rem; }
+  .lexai { background: rgba(74,143,201,0.15); color: #4A8FC9; border: 1px solid rgba(74,143,201,0.2); }
+  .estateiq { background: rgba(76,175,122,0.15); color: #4CAF7A; border: 1px solid rgba(76,175,122,0.2); }
+  .opsguard { background: rgba(201,168,76,0.15); color: #C9A84C; border: 1px solid rgba(201,168,76,0.2); }
+  .card-detail { font-size: 13px; color: #7A6330; margin-bottom: 0.3rem; font-family: 'JetBrains Mono', monospace; }
+  .card-detail span { color: #9A9080; }
+  .card-summary { font-size: 13px; color: #6A6060; margin-top: 0.8rem; line-height: 1.5; font-style: italic; }
+  .loading { text-align: center; padding: 3rem; color: #7A6330; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .pagination { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; flex-wrap: wrap; }
+  .page-btn { padding: 0.5rem 1rem; font-size: 12px; }
+  .page-btn.active { background: rgba(201,168,76,0.3); color: #E2C97E; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Fred Baker's Automations</h1>
+    <div class="subtitle">Nigeria Business Intelligence Database</div>
+  </div>
+  <div style="text-align:right">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#C9A84C">API: http://127.0.0.1:8000</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#7A6330">Abuja, Nigeria</div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat"><span class="num" id="total-count">—</span><span class="lbl">Total Records</span></div>
+  <div class="stat"><span class="num" id="lexai-count">—</span><span class="lbl">LexAI</span></div>
+  <div class="stat"><span class="num" id="estateiq-count">—</span><span class="lbl">EstateIQ</span></div>
+  <div class="stat"><span class="num" id="opsguard-count">—</span><span class="lbl">OpsGuard</span></div>
+  <div class="stat"><span class="num" id="cities-count">—</span><span class="lbl">Cities</span></div>
+</div>
+
+<div class="container">
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Search companies...">
+    <select id="city-filter">
+      <option value="">All Cities</option>
+      <option>Lagos</option><option>Abuja</option><option>Port Harcourt</option>
+      <option>Warri</option><option>Uyo</option><option>Kano</option>
+      <option>Ibadan</option><option>Owerri</option><option>Benin City</option>
+      <option>Kaduna</option><option>Enugu</option><option>Calabar</option>
+      <option>Jos</option><option>Maiduguri</option>
+    </select>
+    <select id="product-filter">
+      <option value="">All Products</option>
+      <option value="LexAI">LexAI</option>
+      <option value="EstateIQ">EstateIQ</option>
+      <option value="OpsGuard">OpsGuard</option>
+    </select>
+    <button onclick="search()">Search</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+
+  <div class="results-header">
+    <h2>Business Directory</h2>
+    <span class="count" id="results-count">Loading...</span>
+  </div>
+
+  <div class="grid" id="results-grid">
+    <div class="loading">Loading Nigeria Business Database...</div>
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+</div>
+
+<script>
+  const API = 'http://127.0.0.1:8000';
+  let currentPage = 1;
+  const perPage = 12;
+  let allResults = [];
+
+  async function loadStats() {
+    try {
+      const res = await fetch(`${API}/stats`);
+      const data = await res.json();
+      document.getElementById('total-count').textContent = data.total_records.toLocaleString();
+      document.getElementById('cities-count').textContent = data.by_city.length;
+      data.by_product.forEach(p => {
+        if (p.prospect_for === 'LexAI') document.getElementById('lexai-count').textContent = p.count;
+        if (p.prospect_for === 'EstateIQ') document.getElementById('estateiq-count').textContent = p.count;
+        if (p.prospect_for === 'OpsGuard') document.getElementById('opsguard-count').textContent = p.count;
+      });
+    } catch(e) { console.log('Stats error:', e); }
+  }
+
+  async function search() {
+    const q = document.getElementById('search-input').value;
+    const city = document.getElementById('city-filter').value;
+    const product = document.getElementById('product-filter').value;
+
+    let url = `${API}/businesses?limit=100`;
+    if (city) url += `&city=${encodeURIComponent(city)}`;
+    if (product) url += `&product=${encodeURIComponent(product)}`;
+    if (q) url = `${API}/search?q=${encodeURIComponent(q)}&limit=100`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      allResults = data.businesses || data.results || [];
+      currentPage = 1;
+      renderResults();
+    } catch(e) {
+      document.getElementById('results-grid').innerHTML = '<div class="loading">⚠️ API not connected. Run: uvicorn api.main:app --reload</div>';
+    }
+  }
+
+  function renderResults() {
+    const start = (currentPage - 1) * perPage;
+    const page = allResults.slice(start, start + perPage);
+    const grid = document.getElementById('results-grid');
+    document.getElementById('results-count').textContent = `${allResults.length} results`;
+
+    if (page.length === 0) {
+      grid.innerHTML = '<div class="loading">No results found</div>';
+      return;
+    }
+
+    grid.innerHTML = page.map(b => `
+      <div class="card">
+        <div class="card-header">
+          <h3>${b.company_name}</h3>
+          <span class="badge ${(b.prospect_for||'').toLowerCase()}">${b.prospect_for}</span>
+        </div>
+        <div class="card-detail">📍 <span>${b.city}, ${b.state}</span></div>
+        <div class="card-detail">🏢 <span>${b.sector}</span></div>
+        <div class="card-detail">📞 <span>${b.phone || 'N/A'}</span></div>
+        <div class="card-detail">🌐 <span>${b.website || 'N/A'}</span></div>
+        <div class="card-summary">${(b.summary||'').substring(0, 120)}...</div>
+      </div>
+    `).join('');
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    const total = Math.ceil(allResults.length / perPage);
+    const pg = document.getElementById('pagination');
+    if (total <= 1) { pg.innerHTML = ''; return; }
+    let html = '';
+    for (let i = 1; i <= total; i++) {
+      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+    }
+    pg.innerHTML = html;
+  }
+
+  function goPage(n) {
+    currentPage = n;
+    renderResults();
+    window.scrollTo(0, 0);
+  }
+
+  function reset() {
+    document.getElementById('search-input').value = '';
+    document.getElementById('city-filter').value = '';
+    document.getElementById('product-filter').value = '';
+    search();
+  }
+
+  loadStats();
+  search();
+</script>
+</body>
+</html>

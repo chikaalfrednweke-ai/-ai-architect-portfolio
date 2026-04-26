@@ -5,14 +5,31 @@
 # ============================================
 
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 import sqlite3
+
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+
 
 # ---- APP ----
 app = FastAPI(
     title="Fred Baker's Automations API",
     description="Nigeria Business Intelligence API — LexAI, EstateIQ, OpsGuard",
     version="1.0.0"
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 DB_PATH = "projects/nigeria-business-db/nigeria_businesses.db"
