@@ -1,0 +1,77 @@
+============================================================
+  FRED BAKER'S AUTOMATIONS
+  AI Sales Intelligence Report
+  Generated: 2026-04-26 01:23:12
+============================================================
+
+  PIPELINE SUMMARY
+------------------------------------------------------------
+  Total Leads      : 5
+  Hot Leads        : 1 🔥
+  Warm Leads       : 2 ⚡
+  Cold Leads       : 2 ❄️
+
+  PRODUCT DISTRIBUTION
+------------------------------------------------------------
+  LexAI            : 2 leads
+  EstateIQ         : 2 leads
+  OpsGuard         : 1 leads
+
+  LEAD DETAILS
+------------------------------------------------------------
+
+  1. Engr. Chukwudi Eze
+     Business  : Eze Oil & Gas Ltd
+     Product   : OpsGuard
+     Score     : 10/10
+     Priority  : 🔥 HOT
+
+  2. Alhaji Musa Dantata
+     Business  : Dantata Properties Ltd
+     Product   : EstateIQ
+     Score     : 7/10
+     Priority  : ⚡ WARM
+
+  3. Barr. Emeka Obi
+     Business  : Obi & Partners Legal
+     Product   : LexAI
+     Score     : 6/10
+     Priority  : ⚡ WARM
+
+  4. Mrs. Aisha Bello
+     Business  : Bello & Associates Law
+     Product   : LexAI
+     Score     : 2/10
+     Priority  : ❄️  COLD
+
+  5. Mr. Tunde Fashola
+     Business  : Fashola Homes
+     Product   : EstateIQ
+     Score     : 2/10
+     Priority  : ❄️  COLD
+
+  WHATSAPP SEQUENCES STATUS
+------------------------------------------------------------
+  Chukwudi — 3 messages ready
+  Musa — 3 messages ready
+  Emeka — 3 messages ready
+  Aisha — 3 messages ready
+  Tunde — 3 messages ready
+
+  RECOMMENDED ACTIONS
+------------------------------------------------------------
+
+  TODAY — Call these HOT leads immediately:
+    → Engr. Chukwudi Eze | OpsGuard
+
+  THIS WEEK — Send WhatsApp to WARM leads:
+    → Alhaji Musa Dantata | EstateIQ
+    → Barr. Emeka Obi | LexAI
+
+  THIS MONTH — Nurture COLD leads:
+    → Mrs. Aisha Bello | LexAI
+    → Mr. Tunde Fashola | EstateIQ
+
+============================================================
+  END OF REPORT
+============================================================
