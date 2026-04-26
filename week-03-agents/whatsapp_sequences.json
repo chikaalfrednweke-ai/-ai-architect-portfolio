@@ -1,62 +1,67 @@
 [
     {
         "name": "Engr. Chukwudi Eze",
+        "first_name": "Chukwudi",
         "business": "Eze Oil & Gas Ltd",
         "product": "OpsGuard",
         "priority": "\ud83d\udd25 HOT",
         "messages": {
-            "day_1": "\ud83d\udc4b Hello Engr.!\n\nI'm Chika from *Fred Baker's Automations* \ud83e\udd16\n\nI help oil & gas businesses in Abuja automate their operations using AI.\n\nI believe *Eze Oil & Gas Ltd* could benefit from our *OpsGuard* solution.\n\nCan I share a quick 60-second overview? \ud83d\ude4f",
-            "day_3": "Hello Engr. \ud83d\udc4b\n\nJust following up on my previous message about *OpsGuard*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* \u2014 and I immediately thought of *Eze Oil & Gas Ltd*.\n\nWould you have 15 minutes this week for a quick call? \ud83d\udcde\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time. \ud83d\udca1",
-            "day_7": "Hi Engr.,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for OpsGuard this month.\n\nHere's what you get as a founding client:\n\u2705 3 months free setup support\n\u2705 Custom configuration for Eze Oil & Gas Ltd\n\u2705 Direct WhatsApp access to our team\n\u2705 Special founding client pricing\n\nAre you ready to move forward? \ud83d\ude80\n\nJust reply *YES* and I'll send over the details right away!"
+            "day_1": "Hi Chukwudi,\n\nI'm Chika from *Fred Baker's Automations*\n\nI help oil & gas businesses in Abuja automate their operations using AI.\n\nI believe *Eze Oil & Gas Ltd* could benefit from our *OpsGuard* solution.\n\nCan I share a quick 60-second overview?",
+            "day_3": "Hello Chukwudi,\n\nJust following up on my previous message about *OpsGuard*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* and I immediately thought of *Eze Oil & Gas Ltd*.\n\nWould you have 15 minutes this week for a quick call?\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time.",
+            "day_7": "Hi Chukwudi,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for OpsGuard this month.\n\nHere's what you get as a founding client:\n- 3 months free setup support\n- Custom configuration for Eze Oil & Gas Ltd\n- Direct WhatsApp access to our team\n- Special founding client pricing\n\nAre you ready to move forward?\n\nJust reply *YES* and I'll send the details right away."
         },
-        "generated_at": "2026-04-26 00:57:42"
+        "generated_at": "2026-04-26 01:17:13"
     },
     {
         "name": "Alhaji Musa Dantata",
+        "first_name": "Musa",
         "business": "Dantata Properties Ltd",
         "product": "EstateIQ",
         "priority": "\u26a1 WARM",
         "messages": {
-            "day_1": "\ud83d\udc4b Hello Alhaji!\n\nI'm Chika from *Fred Baker's Automations* \ud83e\udd16\n\nI help real estate businesses in Abuja automate their operations using AI.\n\nI believe *Dantata Properties Ltd* could benefit from our *EstateIQ* solution.\n\nCan I share a quick 60-second overview? \ud83d\ude4f",
-            "day_3": "Hello Alhaji \ud83d\udc4b\n\nJust following up on my previous message about *EstateIQ*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* \u2014 and I immediately thought of *Dantata Properties Ltd*.\n\nWould you have 15 minutes this week for a quick call? \ud83d\udcde\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time. \ud83d\udca1",
-            "day_7": "Hi Alhaji,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for EstateIQ this month.\n\nHere's what you get as a founding client:\n\u2705 3 months free setup support\n\u2705 Custom configuration for Dantata Properties Ltd\n\u2705 Direct WhatsApp access to our team\n\u2705 Special founding client pricing\n\nAre you ready to move forward? \ud83d\ude80\n\nJust reply *YES* and I'll send over the details right away!"
+            "day_1": "Hi Musa,\n\nI'm Chika from *Fred Baker's Automations*\n\nI help real estate businesses in Abuja automate their operations using AI.\n\nI believe *Dantata Properties Ltd* could benefit from our *EstateIQ* solution.\n\nCan I share a quick 60-second overview?",
+            "day_3": "Hello Musa,\n\nJust following up on my previous message about *EstateIQ*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* and I immediately thought of *Dantata Properties Ltd*.\n\nWould you have 15 minutes this week for a quick call?\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time.",
+            "day_7": "Hi Musa,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for EstateIQ this month.\n\nHere's what you get as a founding client:\n- 3 months free setup support\n- Custom configuration for Dantata Properties Ltd\n- Direct WhatsApp access to our team\n- Special founding client pricing\n\nAre you ready to move forward?\n\nJust reply *YES* and I'll send the details right away."
         },
-        "generated_at": "2026-04-26 00:57:42"
+        "generated_at": "2026-04-26 01:17:13"
     },
     {
         "name": "Barr. Emeka Obi",
+        "first_name": "Emeka",
         "business": "Obi & Partners Legal",
         "product": "LexAI",
         "priority": "\u26a1 WARM",
         "messages": {
-            "day_1": "\ud83d\udc4b Hello Barr.!\n\nI'm Chika from *Fred Baker's Automations* \ud83e\udd16\n\nI help law firm businesses in Abuja automate their operations using AI.\n\nI believe *Obi & Partners Legal* could benefit from our *LexAI* solution.\n\nCan I share a quick 60-second overview? \ud83d\ude4f",
-            "day_3": "Hello Barr. \ud83d\udc4b\n\nJust following up on my previous message about *LexAI*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* \u2014 and I immediately thought of *Obi & Partners Legal*.\n\nWould you have 15 minutes this week for a quick call? \ud83d\udcde\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time. \ud83d\udca1",
-            "day_7": "Hi Barr.,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for LexAI this month.\n\nHere's what you get as a founding client:\n\u2705 3 months free setup support\n\u2705 Custom configuration for Obi & Partners Legal\n\u2705 Direct WhatsApp access to our team\n\u2705 Special founding client pricing\n\nAre you ready to move forward? \ud83d\ude80\n\nJust reply *YES* and I'll send over the details right away!"
+            "day_1": "Hi Emeka,\n\nI'm Chika from *Fred Baker's Automations*\n\nI help law firm businesses in Abuja automate their operations using AI.\n\nI believe *Obi & Partners Legal* could benefit from our *LexAI* solution.\n\nCan I share a quick 60-second overview?",
+            "day_3": "Hello Emeka,\n\nJust following up on my previous message about *LexAI*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* and I immediately thought of *Obi & Partners Legal*.\n\nWould you have 15 minutes this week for a quick call?\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time.",
+            "day_7": "Hi Emeka,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for LexAI this month.\n\nHere's what you get as a founding client:\n- 3 months free setup support\n- Custom configuration for Obi & Partners Legal\n- Direct WhatsApp access to our team\n- Special founding client pricing\n\nAre you ready to move forward?\n\nJust reply *YES* and I'll send the details right away."
         },
-        "generated_at": "2026-04-26 00:57:42"
+        "generated_at": "2026-04-26 01:17:13"
     },
     {
         "name": "Mrs. Aisha Bello",
+        "first_name": "Aisha",
         "business": "Bello & Associates Law",
         "product": "LexAI",
         "priority": "\u2744\ufe0f  COLD",
         "messages": {
-            "day_1": "\ud83d\udc4b Hello Mrs.!\n\nI'm Chika from *Fred Baker's Automations* \ud83e\udd16\n\nI help law firm businesses in Abuja automate their operations using AI.\n\nI believe *Bello & Associates Law* could benefit from our *LexAI* solution.\n\nCan I share a quick 60-second overview? \ud83d\ude4f",
-            "day_3": "Hello Mrs. \ud83d\udc4b\n\nJust following up on my previous message about *LexAI*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* \u2014 and I immediately thought of *Bello & Associates Law*.\n\nWould you have 15 minutes this week for a quick call? \ud83d\udcde\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time. \ud83d\udca1",
-            "day_7": "Hi Mrs.,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for LexAI this month.\n\nHere's what you get as a founding client:\n\u2705 3 months free setup support\n\u2705 Custom configuration for Bello & Associates Law\n\u2705 Direct WhatsApp access to our team\n\u2705 Special founding client pricing\n\nAre you ready to move forward? \ud83d\ude80\n\nJust reply *YES* and I'll send over the details right away!"
+            "day_1": "Hi Aisha,\n\nI'm Chika from *Fred Baker's Automations*\n\nI help law firm businesses in Abuja automate their operations using AI.\n\nI believe *Bello & Associates Law* could benefit from our *LexAI* solution.\n\nCan I share a quick 60-second overview?",
+            "day_3": "Hello Aisha,\n\nJust following up on my previous message about *LexAI*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* and I immediately thought of *Bello & Associates Law*.\n\nWould you have 15 minutes this week for a quick call?\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time.",
+            "day_7": "Hi Aisha,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for LexAI this month.\n\nHere's what you get as a founding client:\n- 3 months free setup support\n- Custom configuration for Bello & Associates Law\n- Direct WhatsApp access to our team\n- Special founding client pricing\n\nAre you ready to move forward?\n\nJust reply *YES* and I'll send the details right away."
         },
-        "generated_at": "2026-04-26 00:57:42"
+        "generated_at": "2026-04-26 01:17:13"
     },
     {
         "name": "Mr. Tunde Fashola",
+        "first_name": "Tunde",
         "business": "Fashola Homes",
         "product": "EstateIQ",
         "priority": "\u2744\ufe0f  COLD",
         "messages": {
-            "day_1": "\ud83d\udc4b Hello Mr.!\n\nI'm Chika from *Fred Baker's Automations* \ud83e\udd16\n\nI help real estate businesses in Abuja automate their operations using AI.\n\nI believe *Fashola Homes* could benefit from our *EstateIQ* solution.\n\nCan I share a quick 60-second overview? \ud83d\ude4f",
-            "day_3": "Hello Mr. \ud83d\udc4b\n\nJust following up on my previous message about *EstateIQ*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* \u2014 and I immediately thought of *Fashola Homes*.\n\nWould you have 15 minutes this week for a quick call? \ud83d\udcde\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time. \ud83d\udca1",
-            "day_7": "Hi Mr.,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for EstateIQ this month.\n\nHere's what you get as a founding client:\n\u2705 3 months free setup support\n\u2705 Custom configuration for Fashola Homes\n\u2705 Direct WhatsApp access to our team\n\u2705 Special founding client pricing\n\nAre you ready to move forward? \ud83d\ude80\n\nJust reply *YES* and I'll send over the details right away!"
+            "day_1": "Hi Tunde,\n\nI'm Chika from *Fred Baker's Automations*\n\nI help real estate businesses in Abuja automate their operations using AI.\n\nI believe *Fashola Homes* could benefit from our *EstateIQ* solution.\n\nCan I share a quick 60-second overview?",
+            "day_3": "Hello Tunde,\n\nJust following up on my previous message about *EstateIQ*.\n\nWe're currently onboarding 3 pilot clients in Abuja at a *special founding rate* and I immediately thought of *Fashola Homes*.\n\nWould you have 15 minutes this week for a quick call?\n\nI can show you exactly how we've helped similar businesses save 40% of their operational time.",
+            "day_7": "Hi Tunde,\n\nQuick update \u2014 we only have *2 pilot spots* remaining for EstateIQ this month.\n\nHere's what you get as a founding client:\n- 3 months free setup support\n- Custom configuration for Fashola Homes\n- Direct WhatsApp access to our team\n- Special founding client pricing\n\nAre you ready to move forward?\n\nJust reply *YES* and I'll send the details right away."
         },
-        "generated_at": "2026-04-26 00:57:42"
+        "generated_at": "2026-04-26 01:17:13"
     }
 ]
