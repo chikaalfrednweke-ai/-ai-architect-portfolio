@@ -1,32 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="nigeria_businesses.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1949"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="businesses" custom_title="0" dock_id="2" table="4,10:mainbusinesses"/><dock_state state="000000ff00000000fd0000000100000002000003910000024ffc0100000002fb000000160064006f0063006b00420072006f00770073006500310100000000000003910000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000011e00ffffff000002690000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">SELECT company_name, city, sector, prospect_for
-FROM businesses
-WHERE prospect_for = 'LexAI'
-ORDER BY city;
-</sql><sql name="SQL 2*">SELECT prospect_for, COUNT(*) as total
-FROM businesses
-GROUP BY prospect_for
-ORDER BY total DESC;</sql><sql name="SQL 3*">SELECT company_name, city, prospect_for, status
-FROM businesses
-WHERE contacted = 0
-ORDER BY city;
-</sql><sql name="SQL 4*">SELECT company_name, city, phone, website
-FROM businesses
-WHERE sector = 'Oil &amp; Gas'
-ORDER BY city;</sql><sql name="SQL 5*">SELECT 
-    city,
-    COUNT(*) as total_businesses,
-    SUM(CASE WHEN prospect_for = 'LexAI' THEN 1 ELSE 0 END) as lexai,
-    SUM(CASE WHEN prospect_for = 'EstateIQ' THEN 1 ELSE 0 END) as estateiq,
-    SUM(CASE WHEN prospect_for = 'OpsGuard' THEN 1 ELSE 0 END) as opsguard
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="nigeria_businesses.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1949"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="businesses" custom_title="0" dock_id="1" table="4,10:mainbusinesses"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011e00ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">SELECT city, COUNT(*) as total,
+SUM(CASE WHEN prospect_for='LexAI' THEN 1 ELSE 0 END) as lexai,
+SUM(CASE WHEN prospect_for='EstateIQ' THEN 1 ELSE 0 END) as estateiq,
+SUM(CASE WHEN prospect_for='OpsGuard' THEN 1 ELSE 0 END) as opsguard
 FROM businesses
 GROUP BY city
-ORDER BY total_businesses DESC;</sql><sql name="SQL 7*">DELETE FROM businesses 
-WHERE id NOT IN (
-    SELECT MIN(id) 
-    FROM businesses 
-    GROUP BY company_name, city
-);
-</sql><sql name="SQL 8*">SELECT COUNT(*) FROM businesses;
-</sql><sql name="SQL 9*">UPDATE businesses 
-SET sector = 'Real Estate', prospect_for = 'EstateIQ'
-WHERE company_name IN ('Fine &amp; Country West Africa', 'Pwan Group');</sql><current_tab id="7"/></tab_sql></sqlb_project>
+ORDER BY total DESC;</sql><current_tab id="0"/></tab_sql></sqlb_project>
