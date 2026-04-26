@@ -1,0 +1,6 @@
+anthropic==0.97.0
+fastapi==0.115.0
+uvicorn==0.30.0
+apify-client==2.5.0
+python-dotenv==1.0.0
+pydantic==2.13.3
