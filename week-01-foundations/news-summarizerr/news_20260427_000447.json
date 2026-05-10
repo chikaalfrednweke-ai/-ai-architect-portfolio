@@ -1,0 +1,352 @@
+[
+    {
+        "title": "Three reasons why DeepSeek’s new model matters",
+        "link": "https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/",
+        "published": "Fri, 24 Apr 2026 21:40:58 +0000",
+        "source": "MIT Technology Review",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "On Friday, Chinese AI firm DeepSeek released a preview of V4, its long-awaited new flagship model. Notably, the model can process much longer prompts than its last generation, thanks to a new design that helps it handle large amounts of text more efficiently. Like DeepSeek’s previous models, V4 is open source, meaning it is available&#8230;.",
+        "fetched_at": "2026-04-27 00:03:46"
+    },
+    {
+        "title": "The Download: supercharged scams and studying AI healthcare",
+        "link": "https://www.technologyreview.com/2026/04/24/1136400/the-download-supercharged-scams-questionable-ai-healthcare/",
+        "published": "Fri, 24 Apr 2026 12:10:00 +0000",
+        "source": "MIT Technology Review",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. We’re in a new era of AI-driven scams When ChatGPT was released in late 2022, it showed how easily generative AI could create human-like text. This quickly caught the eye of&#8230;.",
+        "fetched_at": "2026-04-27 00:03:46"
+    },
+    {
+        "title": "Health-care AI is here. We don’t know if it actually helps patients.",
+        "link": "https://www.technologyreview.com/2026/04/24/1136352/health-care-ai-dont-know-actually-helps-patients/",
+        "published": "Fri, 24 Apr 2026 09:00:00 +0000",
+        "source": "MIT Technology Review",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "I don’t need to tell you that AI is everywhere. Or that it is being used, increasingly, in hospitals. Doctors are using AI to help them with notetaking.",
+        "fetched_at": "2026-04-27 00:03:46"
+    },
+    {
+        "title": "The Download: introducing the Nature issue",
+        "link": "https://www.technologyreview.com/2026/04/23/1136346/the-download-introducing-nature-issue/",
+        "published": "Thu, 23 Apr 2026 12:10:00 +0000",
+        "source": "MIT Technology Review",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Introducing: the Nature issue When we talk about “nature,” we usually mean something untouched by humans. But little of that world exists today.",
+        "fetched_at": "2026-04-27 00:03:46"
+    },
+    {
+        "title": "Will fusion power get cheap? Don’t count on it.",
+        "link": "https://www.technologyreview.com/2026/04/23/1136329/fusion-power-cost/",
+        "published": "Thu, 23 Apr 2026 10:00:00 +0000",
+        "source": "MIT Technology Review",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "Fusion power could provide a steady, zero-emissions source of electricity in the future—if companies can get plants built and running. But a new study suggests that even if that future arrives, it might not come cheap. Technologies tend to get less expensive over time.",
+        "fetched_at": "2026-04-27 00:03:46"
+    },
+    {
+        "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+        "link": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+        "published": "Thu, 22 Jan 2026 14:00:00 GMT",
+        "source": "VentureBeat AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging demand for artificial intelligence applications exposes the limitations of legacy cloud infrastructure. TQ Ventures led the round, with participation from FPV Ventures, Redpoint, and Unusual Ventures. The investment values Railway as one of the most significant infrastructure sta.",
+        "fetched_at": "2026-04-27 00:03:50"
+    },
+    {
+        "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+        "link": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+        "published": "Mon, 19 Jan 2026 14:00:00 GMT",
+        "source": "VentureBeat AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive. Claude Code, Anthropic&#x27;s terminal-based AI agent that can write, debug, and deploy code autonomously, has captured the imagination of software developers worldwide. But its pricing — ranging from $20 to $200 per month depending on usage — has sparked a growing rebellion among the very programmers it aims to serve.",
+        "fetched_at": "2026-04-27 00:03:50"
+    },
+    {
+        "title": "Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews",
+        "link": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+        "published": "Fri, 16 Jan 2026 14:01:00 GMT",
+        "source": "VentureBeat AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "Alfred Wahlforss was running out of options. His startup, Listen Labs, needed to hire over 100 engineers, but competing against Mark Zuckerberg&#x27;s $100 million offers seemed impossible. So he spent $5,000 — a fifth of his marketing budget — on a billboard in San Francisco displaying what looked like gibberish: five strings of random numbers.",
+        "fetched_at": "2026-04-27 00:03:50"
+    },
+    {
+        "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+        "link": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+        "published": "Tue, 13 Jan 2026 13:00:00 GMT",
+        "source": "VentureBeat AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "Salesforce on Tuesday launched an entirely rebuilt version of Slackbot, the company&#x27;s workplace assistant, transforming it from a simple notification tool into what executives describe as a fully powered AI agent capable of searching enterprise data, drafting documents, and taking action on behalf of employees.",
+        "fetched_at": "2026-04-27 00:03:50"
+    },
+    {
+        "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+        "link": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+        "published": "Mon, 12 Jan 2026 11:30:00 GMT",
+        "source": "VentureBeat AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "Anthropic released Cowork on Monday, a new AI agent capability that extends the power of its wildly successful Claude Code tool to non-technical users — and according to company insiders, the team built the entire feature in approximately a week and a half, largely using Claude Code itself.",
+        "fetched_at": "2026-04-27 00:03:50"
+    },
+    {
+        "title": "How Project Maven taught the military to love AI",
+        "link": "https://www.theverge.com/ai-artificial-intelligence/917996/project-maven-military-ai-katrina-manson",
+        "published": "2026-04-24T13:00:00-04:00",
+        "source": "The Verge AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "In the first 24 hours of the assault on Iran, the US military struck more than 1,000 targets, nearly double the scale of the \"shock and awe\" attack on Iraq over two decades ago. This acceleration was made possible by AI systems that speed up the targeting process. Chief among them is the Maven Smart [&#8230;].",
+        "fetched_at": "2026-04-27 00:03:57"
+    },
+    {
+        "title": "AirPods, Touch Bars, and the rest of Tim Cook&#8217;s legacy",
+        "link": "https://www.theverge.com/podcast/917965/apple-ceo-cook-ternus-transition",
+        "published": "2026-04-24T10:43:07-04:00",
+        "source": "The Verge AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "We knew at some point Tim Cook would step down from his position as Apple's CEO. Over the last year, it has become increasingly obvious that John Ternus was his likely successor. The news this week was still a surprise, though - and this year's succession could lead to some important changes at the most [&#8230;].",
+        "fetched_at": "2026-04-27 00:03:57"
+    },
+    {
+        "title": "Musk vs. Altman is here, and it&#8217;s going to get messy",
+        "link": "https://www.theverge.com/ai-artificial-intelligence/917755/musk-altman-openai-xai-gossip",
+        "published": "2026-04-24T08:00:00-04:00",
+        "source": "The Verge AI",
+        "category": "AI Automation",
+        "relevance": "LexAI",
+        "summary": "Elon Musk cofounded OpenAI, and then flounced off in a huff when he wasn't anointed CEO, leaving Sam Altman as the last power-hungry man standing. Now, Musk is back with a lawsuit, and a trial is scheduled to start in Oakland, California, on April 27th. Theoretically, it's a legal case about whether OpenAI defrauded Musk.",
+        "fetched_at": "2026-04-27 00:03:57"
+    },
+    {
+        "title": "China’s DeepSeek previews new AI model a year after jolting US rivals",
+        "link": "https://www.theverge.com/ai-artificial-intelligence/918035/deepseek-preview-v4-ai-model",
+        "published": "2026-04-24T05:45:30-04:00",
+        "source": "The Verge AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "Chinese AI company DeepSeek released a preview of its hotly anticipated next-generation AI model V4 on Friday, saying that the open-source model can compete with leading closed-source systems from US rivals including Anthropic, Google, and OpenAI.",
+        "fetched_at": "2026-04-27 00:03:57"
+    },
+    {
+        "title": "Prestigious photo contest answers ‘what is a photo?’",
+        "link": "https://www.theverge.com/gadgets/918016/prestigious-photo-contest-answers-what-is-a-photo",
+        "published": "2026-04-24T05:40:07-04:00",
+        "source": "The Verge AI",
+        "category": "AI Automation",
+        "relevance": "General",
+        "summary": "We love to muse over how \"real\" photography is defined here at The Verge now that generative AI is so prolific, and the World Press Photo competition might have the answer. The prestigious award celebrates the best of photojournalism, where capturing reality is paramount. The winning entry for 2026 - \"Separated by ICE,\" captured by [&#8230;].",
+        "fetched_at": "2026-04-27 00:03:57"
+    },
+    {
+        "title": "Digital Nomads: Amara Uyanna has worked across four continents. She is not done.",
+        "link": "https://techcabal.com/2026/04/25/digital-nomads-how-amara-uyanna-built-a-global-career/",
+        "published": "Sat, 25 Apr 2026 14:48:29 +0000",
+        "source": "TechCabal",
+        "category": "Nigerian Tech",
+        "relevance": "OpsGuard",
+        "summary": "Amara Uyanna left Lagos with one goal: run a global oil company. A summer internship in the Niger Delta changed everything. What followed was a decade of reinvention across oil fields, newsrooms, fintech startups, and energy-tech operations in four continents.",
+        "fetched_at": "2026-04-27 00:04:41"
+    },
+    {
+        "title": "Why Nigerian crypto startups are expanding beyond retail trading",
+        "link": "https://techcabal.com/2026/04/25/why-nigerian-startups-expand-beyond-crypto-retail-trading/",
+        "published": "Sat, 25 Apr 2026 11:03:23 +0000",
+        "source": "TechCabal",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "The serious push into stablecoins, B2B payment rails, futures, and more complex financial products accelerated from 2023 onward to diversify income beyond the volatile retail cycle.",
+        "fetched_at": "2026-04-27 00:04:41"
+    },
+    {
+        "title": "Nigeria is tightening tax enforcement. TaxStreem wants to automate compliance.",
+        "link": "https://techcabal.com/2026/04/25/taxstreem-wants-to-file-your-taxes-as-transactions-happen/",
+        "published": "Sat, 25 Apr 2026 09:38:26 +0000",
+        "source": "TechCabal",
+        "category": "Nigerian Tech",
+        "relevance": "LexAI",
+        "summary": "TaxStreem is an AI-powered tax calculation and computation tool that a tool that sits directly on top of a business’s financial activity.",
+        "fetched_at": "2026-04-27 00:04:41"
+    },
+    {
+        "title": "This Kenyan startup wants to rebuild enterprise software around AI agents",
+        "link": "https://techcabal.com/2026/04/24/this-kenyan-startup-wants-to-rebuild-enterprise-software-around-ai-agents/",
+        "published": "Fri, 24 Apr 2026 15:19:47 +0000",
+        "source": "TechCabal",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "Lua provides a platform that allows organisations to create and deploy autonomous agents that can handle multi-step workflows such as customer onboarding, loan processing and claims management.",
+        "fetched_at": "2026-04-27 00:04:41"
+    },
+    {
+        "title": "Everything you need to know about the newly released OPPO Find X9 Ultra",
+        "link": "https://techcabal.com/2026/04/24/oppo-find-x9-ultra-price-and-specs/",
+        "published": "Fri, 24 Apr 2026 12:45:43 +0000",
+        "source": "TechCabal",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "This OPPO launch stands out from previous ones for one reason: this is the first time an Ultra-tier Find X phone is going on sale outside China.",
+        "fetched_at": "2026-04-27 00:04:41"
+    },
+    {
+        "title": "Who controls AI systems once governments adopt them?",
+        "link": "https://techpoint.africa/insight/ai-systems-control-once-governments-adopts/",
+        "published": "Sat, 25 Apr 2026 12:44:00 +0000",
+        "source": "Techpoint Africa",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "Once AI systems are deployed into a government workflow, the harder question is no longer whether it is compliant on paper, but whether the government can actually see it, control it, or stop it if conditions change.",
+        "fetched_at": "2026-04-27 00:04:42"
+    },
+    {
+        "title": "GIGM unveils Hire X, its ride-hailing service, and PASS, a travel and ticketing platform, at GPC 2026",
+        "link": "https://techpoint.africa/coverage/gigm-unveils-hire-x-and-pass/",
+        "published": "Fri, 24 Apr 2026 10:09:24 +0000",
+        "source": "Techpoint Africa",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "At GPC 2026, GIG Mobility introduced Hire X, a premium ride-hailing service, and PASS, its all-in-one travel and tour platform.",
+        "fetched_at": "2026-04-27 00:04:42"
+    },
+    {
+        "title": "Infinix NOTE 60 Ultra Ushers in New   Premium Era",
+        "link": "https://techpoint.africa/brandpress/infinix-note-60-ultra-ushers-in-new-premium-era/",
+        "published": "Fri, 24 Apr 2026 09:20:12 +0000",
+        "source": "Techpoint Africa",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "Infinix is cementing its status within the premium smartphone segment.",
+        "fetched_at": "2026-04-27 00:04:42"
+    },
+    {
+        "title": "Telcos step back as the FCCPC approve new data and airtime lenders",
+        "link": "https://techpoint.africa/insight/techpoint-digest-1330/",
+        "published": "Fri, 24 Apr 2026 07:00:00 +0000",
+        "source": "Techpoint Africa",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "On Techpoint Digest, we discuss MTN is set to begin subscriber payback, Nigeria’s telecom struggle before the GSM revolution, and the FCCPC approving new data and airtime lenders.",
+        "fetched_at": "2026-04-27 00:04:42"
+    },
+    {
+        "title": "The auction that changed everything: How Nigeria’s 2001 GSM licence sale built the foundation of a tech economy",
+        "link": "https://techpoint.africa/insight/gsm-licence-sale-built-tech-foundation/",
+        "published": "Fri, 24 Apr 2026 03:00:00 +0000",
+        "source": "Techpoint Africa",
+        "category": "Nigerian Tech",
+        "relevance": "General",
+        "summary": "Interswitch, Flutterwave, and Paystack exist because of the 2001 GSM licence auction. Before it, Nigeria had 400,000 phone lines for 120 million people. Four years later, it had 10 million mobile subscribers.",
+        "fetched_at": "2026-04-27 00:04:42"
+    },
+    {
+        "title": "AEC welcomes FG, NUPRC intervention in Dawes Island appeal",
+        "link": "https://nairametrics.com/2026/04/26/aec-welcomes-fg-nuprc-intervention-in-dawes-island-appeal/",
+        "published": "Sun, 26 Apr 2026 20:31:53 +0000",
+        "source": "Nairametrics",
+        "category": "Nigerian Business",
+        "relevance": "OpsGuard",
+        "summary": "The African Energy Chamber (AEC) has welcomed the Federal Government’s intervention in the Dawes Island marginal field dispute, describing it as a positive signal for Nigeria’s upstream investment climate. This was disclosed in a statement by the chamber, which highlighted the importance of regulatory certainty in the oil and gas sector. The development comes amid [&#8230;]\nThe post AEC welcomes FG, NUPRC intervention in Dawes Island appeal appeared first on Nairametrics.",
+        "fetched_at": "2026-04-27 00:04:43"
+    },
+    {
+        "title": "Taiwo Oyedele’s appointment signals shift in Nigeria’s fiscal policy approach",
+        "link": "https://nairametrics.com/2026/04/26/taiwo-oyedeles-appointment-signals-shift-in-nigerias-fiscal-policy-approach/",
+        "published": "Sun, 26 Apr 2026 20:25:24 +0000",
+        "source": "Nairametrics",
+        "category": "Nigerian Business",
+        "relevance": "General",
+        "summary": "The latest episode of Drinks &#38; Mics spotlighted Nigeria’s new finance minister, Taiwo Oyedele, and what his appointment means for fiscal coordination, investor confidence, and broader economic management.",
+        "fetched_at": "2026-04-27 00:04:43"
+    },
+    {
+        "title": "Lagos, 3 firms sign power deals to scale generation capacity to 400MW",
+        "link": "https://nairametrics.com/2026/04/26/lagos-3-firms-sign-power-deals-to-scale-generation-capacity-to-400mw/",
+        "published": "Sun, 26 Apr 2026 18:00:59 +0000",
+        "source": "Nairametrics",
+        "category": "Nigerian Business",
+        "relevance": "General",
+        "summary": "The Lagos State Government has signed Power Purchase Agreements (PPAs) and concession arrangements with three independent power producers (IPPs) as part of efforts to expand electricity generation capacity to between 200MW and 400MW within the next few years.",
+        "fetched_at": "2026-04-27 00:04:43"
+    },
+    {
+        "title": "Mali imposes nightly curfew as coordinated attacks reach capital",
+        "link": "https://nairametrics.com/2026/04/26/mali-imposes-nightly-curfew-as-coordinated-attacks-reach-capital/",
+        "published": "Sun, 26 Apr 2026 17:24:03 +0000",
+        "source": "Nairametrics",
+        "category": "Nigerian Business",
+        "relevance": "OpsGuard",
+        "summary": "Authorities in Mali have imposed a 72-hour nightly curfew in the capital, Bamako, following a wave of coordinated attacks that struck the city and other regions. The curfew, announced by Governor Abdoulaye Coulibaly, runs from 21:00 to 06:00 local time and took effect on April 25, 2026, as security forces intensified operations across the capital. The attacks, [&#8230;]\nThe post Mali imposes nightly curfew as coordinated attacks reach capital  appeared first on Nairametrics.",
+        "fetched_at": "2026-04-27 00:04:43"
+    },
+    {
+        "title": "African Energy Chamber renews Africa Energies Summit boycott over local content",
+        "link": "https://nairametrics.com/2026/04/26/african-energy-chamber-renews-africa-energies-summit-boycott-over-local-content/",
+        "published": "Sun, 26 Apr 2026 17:11:00 +0000",
+        "source": "Nairametrics",
+        "category": "Nigerian Business",
+        "relevance": "OpsGuard",
+        "summary": "The African Energy Chamber (AEC) has reaffirmed its decision to boycott the upcoming Africa Energies Summit in London over concerns about a lack of local content and African representation. This was disclosed in a statement issued by the chamber, which stressed the need for meaningful inclusion in Africa-focused industry platforms. The development highlights growing dissatisfaction [&#8230;]\nThe post African Energy Chamber renews Africa Energies Summit boycott over local content appeared first o.",
+        "fetched_at": "2026-04-27 00:04:43"
+    },
+    {
+        "title": "Bytes Speak All Languages: Cross-Script Name Retrieval via Contrastive Learning",
+        "link": "https://towardsdatascience.com/bytes-speak-all-languages-cross-script-name-retrieval-via-contrastive-learning/",
+        "published": "Sun, 26 Apr 2026 15:00:00 +0000",
+        "source": "Towards Data Science",
+        "category": "AI Tools",
+        "relevance": "General",
+        "summary": "Why learn 8 scripts when you can learn 256 bytes?\nThe post Bytes Speak All Languages: Cross-Script Name Retrieval via Contrastive Learning appeared first on Towards Data Science.",
+        "fetched_at": "2026-04-27 00:04:47"
+    },
+    {
+        "title": "I Reduced My Pandas Runtime by 95% — Here’s What I Was Doing Wrong",
+        "link": "https://towardsdatascience.com/i-reduced-my-pandas-runtime-by-95-heres-what-i-was-doing-wrong/",
+        "published": "Sun, 26 Apr 2026 13:00:00 +0000",
+        "source": "Towards Data Science",
+        "category": "AI Tools",
+        "relevance": "OpsGuard",
+        "summary": "Most slow Pandas code \"works\", until it doesn't. Learn how to spot hidden bottlenecks, avoid costly row-wise operations, and know when Pandas is no longer enough. The post I Reduced My Pandas Runtime by 95% — Here’s What I Was Doing Wrong appeared first on Towards Data Science.",
+        "fetched_at": "2026-04-27 00:04:47"
+    },
+    {
+        "title": "Causal Inference Is Different in Business",
+        "link": "https://towardsdatascience.com/causal-inference-is-different-in-business/",
+        "published": "Sat, 25 Apr 2026 15:00:00 +0000",
+        "source": "Towards Data Science",
+        "category": "AI Tools",
+        "relevance": "EstateIQ",
+        "summary": "How does decision-gravity dictate this gap?\nThe post Causal Inference Is Different in Business appeared first on Towards Data Science.",
+        "fetched_at": "2026-04-27 00:04:47"
+    },
+    {
+        "title": "The Essential Guide to Effectively Summarizing Massive Documents, Part 2",
+        "link": "https://towardsdatascience.com/the-essential-guide-to-effectively-summarizing-massive-documents-part-2/",
+        "published": "Sat, 25 Apr 2026 13:00:00 +0000",
+        "source": "Towards Data Science",
+        "category": "AI Tools",
+        "relevance": "General",
+        "summary": "We have the document clusters, and it’s time to unlock their true potential! Let’s explore how to extract meaningful information from the actionable clusters.",
+        "fetched_at": "2026-04-27 00:04:47"
+    },
+    {
+        "title": "Introduction to Approximate Solution Methods for Reinforcement Learning",
+        "link": "https://towardsdatascience.com/introduction-to-approximate-solution-methods-for-reinforcement-learning-2/",
+        "published": "Fri, 24 Apr 2026 16:30:00 +0000",
+        "source": "Towards Data Science",
+        "category": "AI Tools",
+        "relevance": "EstateIQ",
+        "summary": "Learn about function approximation and the different choices for approximation functions\nThe post Introduction to Approximate Solution Methods for Reinforcement Learning appeared first on Towards Data Science.",
+        "fetched_at": "2026-04-27 00:04:47"
+    }
+]
