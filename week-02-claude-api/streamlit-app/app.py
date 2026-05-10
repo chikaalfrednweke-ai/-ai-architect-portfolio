@@ -37,13 +37,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---- DATABASE ----
-DB_PATH = "projects/nigeria-business-db/nigeria_businesses.db"
+import os
 
 @st.cache_data
 def load_data():
-    conn = sqlite3.connect(DB_PATH)
-    df = pd.read_sql_query("SELECT * FROM businesses", conn)
-    conn.close()
+    # Cloud deployment uses CSV, local uses SQLite
+    csv_path = os.path.join(os.path.dirname(__file__), "nigeria_businesses.csv")
+    db_path = "projects/nigeria-business-db/nigeria_businesses.db"
+    
+    if os.path.exists(csv_path):
+        df = pd.read_csv(csv_path)
+    elif os.path.exists(db_path):
+        conn = sqlite3.connect(db_path)
+        df = pd.read_sql_query("SELECT * FROM businesses", conn)
+        conn.close()
+    else:
+        st.error("Database not found!")
+        return pd.DataFrame()
     return df
 
 def get_stats():
