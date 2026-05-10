@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fred Baker's Daily AI Briefing — May 10, 2026 — 15:55</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0A0A0A; color: #E8E0D0; font-family: 'Cormorant Garamond', serif; font-size: 16px; line-height: 1.7; }
+  
+  .header {
+    background: linear-gradient(135deg, #111111, #0A0A0A);
+    border-bottom: 2px solid #C9A84C;
+    padding: 3rem;
+    text-align: center;
+  }
+  .header .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: #C9A84C;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #E2C97E;
+    margin-bottom: 0.5rem;
+  }
+  .header .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #7A6330;
+  }
+
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1.5rem 3rem;
+    background: #111111;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .stat { text-align: center; }
+  .stat .num {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #C9A84C;
+    display: block;
+  }
+  .stat .lbl {
+    font-size: 11px;
+    color: #7A6330;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 3rem; }
+
+  .category-section { margin-bottom: 3rem; }
+  .category-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: #E2C97E;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .article-card {
+    background: #111111;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 1.2rem;
+    transition: border-color 0.2s;
+  }
+  .article-card:hover { border-color: rgba(201,168,76,0.2); }
+
+  .article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  .relevance-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .article-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #7A6330;
+  }
+
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  .article-title a {
+    color: #E2C97E;
+    text-decoration: none;
+  }
+  .article-title a:hover { color: #C9A84C; }
+
+  .article-summary {
+    font-size: 14px;
+    color: #7A6370;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .article-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #4A4040;
+  }
+  .read-more {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #C9A84C;
+    text-decoration: none;
+  }
+  .read-more:hover { color: #E2C97E; }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #4A4040;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Fred Baker's Automations — Daily Intelligence</div>
+  <h1>AI & Nigeria Tech Briefing</h1>
+  <div class="date">May 10, 2026 — 15:55</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat">
+    <span class="num">35</span>
+    <span class="lbl">Articles</span>
+  </div>
+  <div class="stat">
+    <span class="num" style="color:#4A8FC9">4</span>
+    <span class="lbl">LexAI</span>
+  </div>
+  <div class="stat">
+    <span class="num" style="color:#4CAF7A">1</span>
+    <span class="lbl">EstateIQ</span>
+  </div>
+  <div class="stat">
+    <span class="num" style="color:#C9A84C">2</span>
+    <span class="lbl">OpsGuard</span>
+  </div>
+  <div class="stat">
+    <span class="num">4</span>
+    <span class="lbl">Categories</span>
+  </div>
+</div>
+
+<div class="container">
+  
+        <div class="category-section">
+            <h2 class="category-title">🤖 AI Automation</h2>
+            <div class="articles-grid">
+                
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">MIT Technology Review</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.technologyreview.com/2026/05/08/1137008/musk-v-altman-week-2-openai-fires-back-and-shivon-zilis-reveals-that-musk-tried-to-poach-sam-altman/" target="_blank">Musk v. Altman week 2: OpenAI fires back, and Shivon Zilis reveals that Musk tried to poach Sam Altman</a>
+                </h3>
+                <p class="article-summary">In the second week of the landmark trial between Elon Musk and OpenAI, Musk’s motivations for bringing the suit were under scrutiny. Last week, Musk t...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://www.technologyreview.com/2026/05/08/1137008/musk-v-altman-week-2-openai-fires-back-and-shivon-zilis-reveals-that-musk-tried-to-poach-sam-altman/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#4A8FC9;border:1px solid #4A8FC940">LexAI</span>
+                    <span class="article-source">MIT Technology Review</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.technologyreview.com/2026/05/08/1136988/heres-what-you-need-to-know-about-the-cruise-ship-hantavirus-outbreak/" target="_blank">Here’s what you need to know about the cruise ship hantavirus outbreak</a>
+                </h3>
+                <p class="article-summary">MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can rea...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://www.technologyreview.com/2026/05/08/1136988/heres-what-you-need-to-know-about-the-cruise-ship-hantavirus-outbreak/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">MIT Technology Review</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.technologyreview.com/2026/05/08/1136985/the-download-ai-malaise-babymaking-ivf-tech/" target="_blank">The Download: AI malaise and babymaking tech</a>
+                </h3>
+                <p class="article-summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. ...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://www.technologyreview.com/2026/05/08/1136985/the-download-ai-malaise-babymaking-ivf-tech/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">MIT Technology Review</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.technologyreview.com/2026/05/08/1136974/heres-how-technology-transformed-babymaking-ivf/" target="_blank">Here’s how technology transformed babymaking</a>
+                </h3>
+                <p class="article-summary">Technology is changing the way we make babies. The pioneering work of the scientists who invented IVF led to the birth of the first “test tube baby” i...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://www.technologyreview.com/2026/05/08/1136974/heres-how-technology-transformed-babymaking-ivf/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">MIT Technology Review</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.technologyreview.com/2026/05/07/1136956/the-download-ivf-tech-balcony-solar/" target="_blank">The Download: the tech reshaping IVF and the rise of balcony solar</a>
+                </h3>
+                <p class="article-summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. ...</p>
+                <div class="article-footer">
+                    <span class="article-date">Thu, 07 May 2026</span>
+                    <a href="https://www.technologyreview.com/2026/05/07/1136956/the-download-ivf-tech-balcony-solar/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">VentureBeat AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud" target="_blank">Railway secures $100 million to challenge AWS with AI-native cloud infrastructure</a>
+                </h3>
+                <p class="article-summary">Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursd...</p>
+                <div class="article-footer">
+                    <span class="article-date">Thu, 22 Jan 2026</span>
+                    <a href="https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">VentureBeat AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free" target="_blank">Claude Code costs up to $200 a month. Goose does the same thing for free.</a>
+                </h3>
+                <p class="article-summary">The artificial intelligence coding revolution comes with a catch: it&#x27;s expensive. Claude Code, Anthropic&#x27;s terminal-based AI agent that can ...</p>
+                <div class="article-footer">
+                    <span class="article-date">Mon, 19 Jan 2026</span>
+                    <a href="https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">VentureBeat AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai" target="_blank">Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews</a>
+                </h3>
+                <p class="article-summary">Alfred Wahlforss was running out of options. His startup, Listen Labs, needed to hire over 100 engineers, but competing against Mark Zuckerberg&#x27;s...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 16 Jan 2026</span>
+                    <a href="https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">VentureBeat AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and" target="_blank">Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI</a>
+                </h3>
+                <p class="article-summary">Salesforce on Tuesday launched an entirely rebuilt version of Slackbot, the company&#x27;s workplace assistant, transforming it from a simple notifica...</p>
+                <div class="article-footer">
+                    <span class="article-date">Tue, 13 Jan 2026</span>
+                    <a href="https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">VentureBeat AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no" target="_blank">Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required</a>
+                </h3>
+                <p class="article-summary">Anthropic released Cowork on Monday, a new AI agent capability that extends the power of its wildly successful Claude Code tool to non-technical users...</p>
+                <div class="article-footer">
+                    <span class="article-date">Mon, 12 Jan 2026</span>
+                    <a href="https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#C9A84C;border:1px solid #C9A84C40">OpsGuard</span>
+                    <span class="article-source">The Verge AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy" target="_blank">All the latest updates on AI data centers</a>
+                </h3>
+                <p class="article-summary">Massive new data centers are the physical foundation for tech companies’ hopes and dreams for AI. But the rush to expand warehouses full of energy-hun...</p>
+                <div class="article-footer">
+                    <span class="article-date">2026-05-08T14:45</span>
+                    <a href="https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">The Verge AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.theverge.com/games/926914/sony-playstation-ai-powerful-tool-games" target="_blank">PlayStation sees AI as a ‘powerful tool’ to help make games</a>
+                </h3>
+                <p class="article-summary">As part of an earnings presentation on Friday, Sony shared how it's thinking about AI at the company, including many details about how it's evaluating...</p>
+                <div class="article-footer">
+                    <span class="article-date">2026-05-08T12:30</span>
+                    <a href="https://www.theverge.com/games/926914/sony-playstation-ai-powerful-tool-games" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#4A8FC9;border:1px solid #4A8FC940">LexAI</span>
+                    <span class="article-source">The Verge AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.theverge.com/report/926771/microsoft-openai-amazon-worries-shit-talk-azure" target="_blank">Microsoft was worried OpenAI would run off to Amazon and ‘shit-talk’ Azure</a>
+                </h3>
+                <p class="article-summary">When OpenAI was busy experimenting with AI-powered gaming bots, Microsoft CEO Satya Nadella and OpenAI CEO Sam Altman were in the early days of formin...</p>
+                <div class="article-footer">
+                    <span class="article-date">2026-05-08T11:25</span>
+                    <a href="https://www.theverge.com/report/926771/microsoft-openai-amazon-worries-shit-talk-azure" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#4CAF7A;border:1px solid #4CAF7A40">EstateIQ</span>
+                    <span class="article-source">The Verge AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.theverge.com/podcast/926707/openai-ceo-murati-musk-trial-vergecast" target="_blank">Everybody wants to rule the AI world</a>
+                </h3>
+                <p class="article-summary">Sometimes, companies pick CEOs based on carefully laid succession plans designed to maximize investor confidence and future performance. Other times, ...</p>
+                <div class="article-footer">
+                    <span class="article-date">2026-05-08T09:31</span>
+                    <a href="https://www.theverge.com/podcast/926707/openai-ceo-murati-musk-trial-vergecast" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">The Verge AI</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://www.theverge.com/tech/926342/nanoleaf-smart-lighting-ai-robotics-red-light-wellness" target="_blank">Nanoleaf bets its future on robots, red light therapy, and AI</a>
+                </h3>
+                <p class="article-summary">Smart lighting company Nanoleaf has been unusually quiet recently. While competitors such as Govee and Philips Hue have been pumping out new products ...</p>
+                <div class="article-footer">
+                    <span class="article-date">2026-05-08T08:15</span>
+                    <a href="https://www.theverge.com/tech/926342/nanoleaf-smart-lighting-ai-robotics-red-light-wellness" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <h2 class="category-title">🇳🇬 Nigerian Tech</h2>
+            <div class="articles-grid">
+                
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">TechCabal</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techcabal.com/2026/05/09/sassa-srd-r370-payment-dates-may-2026/" target="_blank">SASSA SRD grant payment dates for May 2026 explained</a>
+                </h3>
+                <p class="article-summary">Since SASSA only processes payments on business days, most beneficiaries will see their money between Monday, May 25 and Friday, May 29....</p>
+                <div class="article-footer">
+                    <span class="article-date">Sat, 09 May 2026</span>
+                    <a href="https://techcabal.com/2026/05/09/sassa-srd-r370-payment-dates-may-2026/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">TechCabal</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techcabal.com/2026/05/09/digital-nomads-olayinka-oke/" target="_blank">Digital Nomads: Olayinka Oke saves $368 monthly to live in three countries a year</a>
+                </h3>
+                <p class="article-summary">She earns in naira, saves in dollars, and refuses to stay in one country long enough to get bored....</p>
+                <div class="article-footer">
+                    <span class="article-date">Sat, 09 May 2026</span>
+                    <a href="https://techcabal.com/2026/05/09/digital-nomads-olayinka-oke/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">TechCabal</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techcabal.com/2026/05/08/nigeria-now-airtel-africas-second-largest-market-by-revenue-per-subscriber/" target="_blank">Nigeria now Airtel Africa’s second-largest market by revenue per subscriber</a>
+                </h3>
+                <p class="article-summary">ARPU measures how much telecom operators earn per subscriber and is a key indicator of whether revenue is sufficient to cover operating costs and fund...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techcabal.com/2026/05/08/nigeria-now-airtel-africas-second-largest-market-by-revenue-per-subscriber/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">TechCabal</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techcabal.com/2026/05/08/opera-backed-minipay-crosses-15-million-wallets/" target="_blank">Opera-backed stablecoin app MiniPay rides Africa demand to 15 million wallets</a>
+                </h3>
+                <p class="article-summary">It underscores how Africa has become one of the world's most active testing grounds for crypto payments and dollar savings products....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techcabal.com/2026/05/08/opera-backed-minipay-crosses-15-million-wallets/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">TechCabal</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techcabal.com/2026/05/08/teddy-ogallo-personal-struggle-building-wayawaya/" target="_blank">WayaWaya founder Teddy Ogallo lived a sheltered life, then had to rebuild everything</a>
+                </h3>
+                <p class="article-summary">Our conversation moves between those personal aspirations and what it takes to build something that lasts....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techcabal.com/2026/05/08/teddy-ogallo-personal-struggle-building-wayawaya/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Techpoint Africa</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techpoint.africa/brandpress/how-ojamaker-is-powering-instant-online-stores-in-africa-with-ai/" target="_blank">How Ojamaker is Powering Instant Online Stores in Africa with AI</a>
+                </h3>
+                <p class="article-summary">Ojamaker is an AI-native platform helping African businesses launch online....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techpoint.africa/brandpress/how-ojamaker-is-powering-instant-online-stores-in-africa-with-ai/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Techpoint Africa</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techpoint.africa/insight/fake-vendors-inside-food-delivery-platforms/" target="_blank">When fake vendors look real: Inside Nigeria’s food delivery loophole</a>
+                </h3>
+                <p class="article-summary">Impostors have found a place on food delivery platforms and stricter measure have to be put in place to flush them out and rebuild consumer trust....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techpoint.africa/insight/fake-vendors-inside-food-delivery-platforms/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Techpoint Africa</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techpoint.africa/brandpress/bumpa-and-vendorcredit-partner-to-launch-bumpa-capital/" target="_blank">Bumpa and Vendorcredit Partner to Launch Bumpa Capital, Expanding Credit Access for Nigerian SMEs</a>
+                </h3>
+                <p class="article-summary">Businesses can now apply for credit and receive funds right....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techpoint.africa/brandpress/bumpa-and-vendorcredit-partner-to-launch-bumpa-capital/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Techpoint Africa</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techpoint.africa/brandpress/over-1400-aspiring-tech-professionals-gather-in-lagos-for-ts-connect/" target="_blank">Over 1,400 Aspiring Tech Professionals Gather in Lagos for TS Connect</a>
+                </h3>
+                <p class="article-summary">TS Academy hosted over 1,400 students and alumni at the....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techpoint.africa/brandpress/over-1400-aspiring-tech-professionals-gather-in-lagos-for-ts-connect/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#4A8FC9;border:1px solid #4A8FC940">LexAI</span>
+                    <span class="article-source">Techpoint Africa</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://techpoint.africa/insight/techpoint-digest-1340/" target="_blank">Copia’s insolvency case heads to Kenya’s High Court</a>
+                </h3>
+                <p class="article-summary">On Techpoint Digest, we discuss Copia's insolvency case, which is headed to Kenya's High Court, Please Call Me Makate suing his backers, and Safaricom...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://techpoint.africa/insight/techpoint-digest-1340/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <h2 class="category-title">💼 Nigerian Business</h2>
+            <div class="articles-grid">
+                
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#C9A84C;border:1px solid #C9A84C40">OpsGuard</span>
+                    <span class="article-source">Nairametrics</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://nairametrics.com/2026/05/10/sahara-group-foundation-commissions-two-sahara-go-recycling-hubs-in-ojodu-lcda-deepening-community-access-to-sustainable-waste-management/" target="_blank">Sahara Group Foundation commissions two Sahara Go-Recycling hubs in Ojodu LCDA, deepening community access to sustainable waste management.</a>
+                </h3>
+                <p class="article-summary">Reinforcing its commitment to expanding community access to sustainable waste management solutions, Sahara Group Foundation, the social impact vehicle...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sun, 10 May 2026</span>
+                    <a href="https://nairametrics.com/2026/05/10/sahara-group-foundation-commissions-two-sahara-go-recycling-hubs-in-ojodu-lcda-deepening-community-access-to-sustainable-waste-management/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Nairametrics</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://nairametrics.com/2026/05/10/the-10-most-valuable-companies-in-nigeria-as-of-april-2026/" target="_blank">The 10 most valuable companies in Nigeria as of April 2026</a>
+                </h3>
+                <p class="article-summary">Nigeria’s equities market remains heavily tilted toward its biggest listed companies, as the top 10 firms on the Nigerian Exchange (NGX) recorded a co...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sun, 10 May 2026</span>
+                    <a href="https://nairametrics.com/2026/05/10/the-10-most-valuable-companies-in-nigeria-as-of-april-2026/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Nairametrics</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://nairametrics.com/2026/05/10/best-performing-nigerian-stocks-for-the-week-ended-may-8-2026/" target="_blank">Best performing Nigerian stocks for the week ended May 8, 2026</a>
+                </h3>
+                <p class="article-summary">The Nigerian equities market closed the first week of May 2026 on a positive note, with the All-Share Index gaining 1. 83 by May 8, while market capit...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sun, 10 May 2026</span>
+                    <a href="https://nairametrics.com/2026/05/10/best-performing-nigerian-stocks-for-the-week-ended-may-8-2026/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Nairametrics</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://nairametrics.com/2026/05/10/meet-the-women-ceos-running-nigerias-most-profitable-listed-companies/" target="_blank">Meet the women CEOs running Nigeria’s most profitable listed companies</a>
+                </h3>
+                <p class="article-summary">At a time of inflationary pressure, rising operational costs, and one of the toughest economic climates Nigerian businesses have faced in recent years...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sun, 10 May 2026</span>
+                    <a href="https://nairametrics.com/2026/05/10/meet-the-women-ceos-running-nigerias-most-profitable-listed-companies/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Nairametrics</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://nairametrics.com/2026/05/10/nigerian-startups-attract-4-million-across-six-deals-in-april-2026/" target="_blank">Nigerian startups attract $4 million across six deals in April 2026</a>
+                </h3>
+                <p class="article-summary">Nigeria’s startup ecosystem recorded a slight rebound in April 2026, with disclosed investments totaling about $4 million across six major startup dea...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sun, 10 May 2026</span>
+                    <a href="https://nairametrics.com/2026/05/10/nigerian-startups-attract-4-million-across-six-deals-in-april-2026/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <h2 class="category-title">⚡ AI Tools</h2>
+            <div class="articles-grid">
+                
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Towards Data Science</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://towardsdatascience.com/llm-summarizers-skip-the-identification-step/" target="_blank">LLM Summarizers Skip the Identification Step</a>
+                </h3>
+                <p class="article-summary">A practitioner's argument that meeting summarizers fail in the same way regressions fail when you skip the part where you ask what the data can suppor...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sun, 10 May 2026</span>
+                    <a href="https://towardsdatascience.com/llm-summarizers-skip-the-identification-step/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Towards Data Science</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://towardsdatascience.com/the-must-know-topics-for-an-llm-engineer/" target="_blank">The Must-Know Topics for an LLM Engineer</a>
+                </h3>
+                <p class="article-summary">From tokenisation to evaluation :  how modern language models actually work in practice
+The post The Must-Know Topics for an LLM Engineer appeared fir...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sat, 09 May 2026</span>
+                    <a href="https://towardsdatascience.com/the-must-know-topics-for-an-llm-engineer/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#4A8FC9;border:1px solid #4A8FC940">LexAI</span>
+                    <span class="article-source">Towards Data Science</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://towardsdatascience.com/rag-is-blind-to-time-i-built-a-temporal-layer-to-fix-it-in-production/" target="_blank">RAG Is Blind to Time — I Built a Temporal Layer to Fix It in Production</a>
+                </h3>
+                <p class="article-summary">Three weeks into testing, a learner told me my AI tutor gave her the wrong answer. Not obviously wrong — just outdated enough to mislead. That was the...</p>
+                <div class="article-footer">
+                    <span class="article-date">Sat, 09 May 2026</span>
+                    <a href="https://towardsdatascience.com/rag-is-blind-to-time-i-built-a-temporal-layer-to-fix-it-in-production/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Towards Data Science</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://towardsdatascience.com/from-data-scientist-to-ai-architect/" target="_blank">From Data Scientist to AI Architect</a>
+                </h3>
+                <p class="article-summary">The end of model-centric thinking in data science
+The post From Data Scientist to AI Architect appeared first on Towards Data Science....</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://towardsdatascience.com/from-data-scientist-to-ai-architect/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-header">
+                    <span class="relevance-badge" style="background:rgba(255,255,255,0.05);color:#6A6060;border:1px solid #6A606040">General</span>
+                    <span class="article-source">Towards Data Science</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="https://towardsdatascience.com/the-ai-agent-security-surface-what-gets-exposed-when-you-add-tools-and-memory/" target="_blank">The AI Agent Security Surface: What Gets Exposed When You Add Tools and Memory</a>
+                </h3>
+                <p class="article-summary">Standard prompt attacks are merely the beginning. A structured framework to map and mitigate the backend attack vectors of agentic workflows. The post...</p>
+                <div class="article-footer">
+                    <span class="article-date">Fri, 08 May 2026</span>
+                    <a href="https://towardsdatascience.com/the-ai-agent-security-surface-what-gets-exposed-when-you-add-tools-and-memory/" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>
+
+<div class="footer">
+  Fred Baker's Automations | Nigeria's Leading AI Automation Company | Abuja, Nigeria<br>
+  Generated: May 10, 2026 — 15:55 | Powered by Python + RSS Feeds + Claude API (coming soon)
+</div>
+
+</body>
+</html>
