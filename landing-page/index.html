@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fred Baker's Automations — Nigeria's Leading AI Automation Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dim: #7A6330;
+  --obsidian: #0A0A0A;
+  --obsidian-2: #111111;
+  --obsidian-3: #1A1A1A;
+  --text: #E8E0D0;
+  --text-dim: #9A9080;
+  --green: #4CAF7A;
+  --blue: #4A8FC9;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--obsidian);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---- NAVBAR ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(10,10,10,0.95);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--obsidian) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 700 !important;
+}
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(74,143,201,0.05) 0%, transparent 50%);
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 900px; }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--obsidian);
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold);
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(201,168,76,0.4);
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: rgba(201,168,76,0.1);
+  transform: translateY(-2px);
+}
+
+/* ---- STATS ---- */
+.stats {
+  padding: 4rem 3rem;
+  background: var(--obsidian-2);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item .number {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  display: block;
+}
+
+.stat-item .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* ---- PRODUCTS ---- */
+.products {
+  padding: 6rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--text-dim);
+  font-style: italic;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--obsidian-2);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.product-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.product-card:hover::before { opacity: 1; }
+
+.product-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.product-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.product-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.product-card .subtitle {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.product-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.product-features li {
+  font-size: 15px;
+  color: var(--text-dim);
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-features li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.product-link {
+  display: inline-block;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: center;
+}
+
+.product-link:hover {
+  background: rgba(201,168,76,0.2);
+  transform: translateY(-1px);
+}
+
+/* ---- WHY US ---- */
+.why-us {
+  padding: 6rem 3rem;
+  background: var(--obsidian-2);
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+.why-us-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.why-card {
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  background: var(--obsidian-3);
+}
+
+.why-card .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.why-card h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--gold-light);
+  margin-bottom: 0.8rem;
+}
+
+.why-card p {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ---- HOW IT WORKS ---- */
+.how-it-works {
+  padding: 6rem 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  padding: 2rem 1.5rem;
+}
+
+.step-number {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: rgba(201,168,76,0.2);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.step h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--gold-light);
+  margin-bottom: 0.8rem;
+}
+
+.step p {
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+/* ---- SECTORS ---- */
+.sectors {
+  padding: 6rem 3rem;
+  background: var(--obsidian-2);
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+.sectors-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.sector-card {
+  background: var(--obsidian-3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.sector-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.sector-card h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+}
+
+.sector-card p {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* ---- CTA SECTION ---- */
+.cta-section {
+  padding: 8rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+}
+
+.cta-box {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--obsidian-2);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 16px;
+  padding: 4rem 3rem;
+}
+
+.cta-box h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.cta-box p {
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.cta-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.cta-contact a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--obsidian-2);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding: 3rem;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold-dim);
+}
+
+/* ---- WHATSAPP FLOAT ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 999;
+  transition: all 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 40px rgba(37,211,102,0.7); }
+  100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .products { padding: 4rem 1.5rem; }
+  .why-us { padding: 4rem 1.5rem; }
+  .cta-section { padding: 4rem 1.5rem; }
+  .cta-box { padding: 2.5rem 1.5rem; }
+  footer { padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">Fred Baker's Automations</div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/2348086632976" class="nav-cta">WhatsApp Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🇳🇬 AI Automation • Abuja, Nigeria</div>
+    <h1>Nigeria's Leading<br><span>AI Automation</span><br>Company</h1>
+    <p>We build production-grade AI systems that solve real Nigerian business problems — from legal automation to property intelligence and oil & gas operations.</p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">Explore Our Products</a>
+      <a href="https://wa.me/2348086632976" class="btn-secondary">📱 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="number">3</span>
+      <span class="label">AI Products Live</span>
+    </div>
+    <div class="stat-item">
+      <span class="number">1,026+</span>
+      <span class="label">Nigerian Businesses</span>
+    </div>
+    <div class="stat-item">
+      <span class="number">14</span>
+      <span class="label">Cities Covered</span>
+    </div>
+    <div class="stat-item">
+      <span class="number">38</span>
+      <span class="label">Knowledge Documents</span>
+    </div>
+    <div class="stat-item">
+      <span class="number">24/7</span>
+      <span class="label">AI Available</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-header">
+    <span class="section-eyebrow">Our Products</span>
+    <h2>Three AI Products.<br>Three Nigerian Industries.</h2>
+    <p>Each product built specifically for the Nigerian market with local laws, prices, and regulations.</p>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- LEXAI -->
+    <div class="product-card">
+      <span class="product-icon">⚖️</span>
+      <span class="product-tag">Legal Technology</span>
+      <h3>LexAI</h3>
+      <p class="subtitle">AI Legal Assistant for Nigerian Law Firms</p>
+      <ul class="product-features">
+        <li>Instant Nigerian law answers 24/7</li>
+        <li>Contract review & drafting guidance</li>
+        <li>NDPR & compliance management</li>
+        <li>CAC & CAMA 2020 guidance</li>
+        <li>Employment & tax law support</li>
+        <li>17+ areas of Nigerian law covered</li>
+      </ul>
+      <a href="https://lexai-nigeria.streamlit.app" target="_blank" class="product-link">
+        Try LexAI FREE →
+      </a>
+    </div>
+
+    <!-- ESTATEIQ -->
+    <div class="product-card">
+      <span class="product-icon">🏢</span>
+      <span class="product-tag">Real Estate Technology</span>
+      <h3>EstateIQ</h3>
+      <p class="subtitle">AI Property Intelligence for Nigeria</p>
+      <ul class="product-features">
+        <li>Abuja & Lagos property prices 2024</li>
+        <li>Certificate of Occupancy guidance</li>
+        <li>Investment strategy analysis</li>
+        <li>Rental yield calculations</li>
+        <li>Due diligence checklists</li>
+        <li>Mortgage & REIT guidance</li>
+      </ul>
+      <a href="https://estateiq-nigeria.streamlit.app" target="_blank" class="product-link">
+        Try EstateIQ FREE →
+      </a>
+    </div>
+
+    <!-- OPSGUARD -->
+    <div class="product-card">
+      <span class="product-icon">⚙️</span>
+      <span class="product-tag">Industrial Technology</span>
+      <h3>OpsGuard</h3>
+      <p class="subtitle">AI Operations for Nigerian Oil & Gas</p>
+      <ul class="product-features">
+        <li>HSE compliance management</li>
+        <li>Pipeline integrity guidance</li>
+        <li>PIA 2021 regulatory support</li>
+        <li>Incident reporting system</li>
+        <li>Local content (NCDMB) tracking</li>
+        <li>SCADA & digital operations</li>
+      </ul>
+      <a href="https://opsguard-nigeria.streamlit.app" target="_blank" class="product-link">
+        Try OpsGuard FREE →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+  <div class="why-us-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Why Choose Us</span>
+      <h2>Built for Nigeria.<br>Not Adapted for Nigeria.</h2>
+      <p>Every competitor adapts foreign AI for Nigeria. We built from scratch for Nigeria.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="icon">🇳🇬</span>
+        <h4>Nigerian-First Design</h4>
+        <p>Built with Nigerian laws, Nigerian prices, Nigerian regulations. Not a foreign product adapted for Nigeria.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">📱</span>
+        <h4>WhatsApp-First Delivery</h4>
+        <p>All our products integrate with WhatsApp — the communication channel Nigerian businesses actually use.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">🔒</span>
+        <h4>NDPR Compliant</h4>
+        <p>Full compliance with Nigeria Data Protection Regulation. Your data stays in Nigeria, protected by Nigerian law.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">💰</span>
+        <h4>Naira Pricing</h4>
+        <p>All contracts in Naira. No dollar exposure. No CBN approval needed. Simple Nigerian business terms.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">🤖</span>
+        <h4>Powered by Claude AI</h4>
+        <p>Built on Anthropic's Claude — the world's most capable AI — trained on Nigerian legal and market data.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">📍</span>
+        <h4>Abuja-Based Support</h4>
+        <p>Local team, local support, local understanding. We're in Abuja — same timezone, same market, same challenges.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="section-header">
+    <span class="section-eyebrow">How It Works</span>
+    <h2>Up and Running in 24 Hours</h2>
+    <p>No complex setup. No IT team needed. Just AI that works.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <span class="step-number">01</span>
+      <h4>WhatsApp Us</h4>
+      <p>Send us a message and we'll understand your business needs in 15 minutes.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">02</span>
+      <h4>Free Demo</h4>
+      <p>We show you a live demo of your product working with your actual use cases.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">03</span>
+      <h4>30-Day Pilot</h4>
+      <p>Start with a free 30-day pilot. No risk, no commitment, no credit card.</p>
+    </div>
+    <div class="step">
+      <span class="step-number">04</span>
+      <h4>Go Live</h4>
+      <p>Deploy to your team within 24 hours. WhatsApp integration included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors" id="sectors">
+  <div class="sectors-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Industries We Serve</span>
+      <h2>Built for Nigeria's<br>Biggest Industries</h2>
+    </div>
+
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <span class="sector-icon">⚖️</span>
+        <div>
+          <h4>Law Firms & Legal Services</h4>
+          <p>438+ law firms in our database across Abuja and Lagos ready for LexAI.</p>
+        </div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏘️</span>
+        <div>
+          <h4>Real Estate & Property</h4>
+          <p>315+ real estate companies across Nigeria ready for EstateIQ.</p>
+        </div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">⛽</span>
+        <div>
+          <h4>Oil & Gas Operations</h4>
+          <p>273+ oil & gas companies across the Niger Delta ready for OpsGuard.</p>
+        </div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏛️</span>
+        <div>
+          <h4>Government & Regulatory</h4>
+          <p>AI tools for compliance, reporting, and regulatory management.</p>
+        </div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏦</span>
+        <div>
+          <h4>Financial Services</h4>
+          <p>AI-powered compliance and customer service for Nigerian banks and fintechs.</p>
+        </div>
+      </div>
+      <div class="sector-card">
+        <span class="sector-icon">🏥</span>
+        <div>
+          <h4>Healthcare</h4>
+          <p>Coming soon — AI automation for Nigerian hospitals and clinics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-box">
+    <h2>Ready to Transform Your Business with AI?</h2>
+    <p>Join the Nigerian businesses already using Fred Baker's Automations. Start with a FREE 30-day pilot — no risk, no commitment.</p>
+
+    <a href="https://wa.me/2348086632976?text=Hello%20Chika%2C%20I%20am%20interested%20in%20Fred%20Baker%27s%20Automations%20AI%20products.%20Can%20we%20schedule%20a%20demo%3F" class="btn-primary" target="_blank">
+      📱 Start Free Pilot on WhatsApp
+    </a>
+
+    <div class="cta-contact">
+      <span>📧 <a href="mailto:aphatradingcoa@gmail.com">aphatradingcoa@gmail.com</a></span>
+      <span>📱 <a href="https://wa.me/2348086632976">+234 808 663 2976</a></span>
+      <span>📍 Abuja, Federal Capital Territory, Nigeria</span>
+      <span>🌐 <a href="https://fredbakers-nigeria-db.streamlit.app" target="_blank">fredbakers-nigeria-db.streamlit.app</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Fred Baker's Automations</div>
+  <div class="footer-tagline">Nigeria's Leading AI Automation Company</div>
+  <div class="footer-links">
+    <a href="https://lexai-nigeria.streamlit.app" target="_blank">⚖️ LexAI</a>
+    <a href="https://estateiq-nigeria.streamlit.app" target="_blank">🏢 EstateIQ</a>
+    <a href="https://opsguard-nigeria.streamlit.app" target="_blank">⚙️ OpsGuard</a>
+    <a href="https://github.com/chikaalfrednweke-ai" target="_blank">GitHub</a>
+    <a href="https://wa.me/2348086632976" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-copy">
+    © 2026 Fred Baker's Automations | A division of Fred Baker's Home Ltd | Abuja, Nigeria<br>
+    Built in Abuja. Designed for Africa's Future. 🦅
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/2348086632976?text=Hello%20Chika%2C%20I%20am%20interested%20in%20Fred%20Baker%27s%20Automations%20AI%20products.%20Can%20we%20schedule%20a%20demo%3F" class="whatsapp-float" target="_blank">
+  💬
+</a>
+
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Animate stats on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.product-card, .why-card, .step, .sector-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
