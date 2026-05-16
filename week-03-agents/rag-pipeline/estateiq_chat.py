@@ -1,12 +1,16 @@
 # ============================================
 # Fred Baker's Automations
-# estateiq_chat.py — EstateIQ Chat Interface
+# estateiq_chat.py — EstateIQ Chat + Claude
 # Nigerian Real Estate AI Assistant
 # ============================================
 
 import streamlit as st
 import chromadb
+import anthropic
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---- PAGE CONFIG ----
 st.set_page_config(
@@ -29,6 +33,12 @@ st.markdown("""
         margin: 0.5rem 0;
         font-size: 13px;
     }
+    .stButton button {
+        background: rgba(76,175,122,0.1);
+        border: 1px solid rgba(76,175,122,0.3);
+        color: #4CAF7A;
+        border-radius: 6px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -36,27 +46,29 @@ st.markdown("""
 col1, col2 = st.columns([3,1])
 with col1:
     st.title("🏢 EstateIQ")
-    st.markdown("*Nigerian Real Estate AI Assistant — Powered by Fred Baker's Automations*")
+    st.markdown("*Nigerian Real Estate AI Assistant — Powered by Claude + RAG*")
 with col2:
     st.markdown("###")
-    st.markdown("📍 **Abuja & Lagos, Nigeria**")
-    st.markdown("🏢 **Fred Baker's Automations**")
+    st.markdown("📍 **Abuja & Lagos**")
+    st.markdown("🤖 **Claude AI Powered**")
 
 st.markdown("---")
 
 # ---- SIDEBAR ----
 st.sidebar.title("🏢 EstateIQ")
-st.sidebar.markdown("**Nigerian Real Estate Knowledge Base**")
+st.sidebar.markdown("**Nigerian Real Estate AI**")
+st.sidebar.markdown("*Powered by Fred Baker's Automations*")
 st.sidebar.markdown("---")
-st.sidebar.markdown("**I Can Help With:**")
+
+st.sidebar.markdown("**Knowledge Base:**")
 areas = [
-    "Abuja property prices",
-    "Lagos property prices",
+    "Abuja property prices 2024",
+    "Lagos property prices 2024",
     "Certificate of Occupancy (C of O)",
-    "Investment strategies",
+    "Investment strategies & yields",
     "Due diligence checklist",
-    "Rental market & yields",
-    "Mortgage options",
+    "Rental market & laws",
+    "Mortgage & financing",
     "REIT investing",
     "Property valuation",
     "PropTech platforms",
@@ -68,104 +80,159 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("**Quick Questions:**")
 sample_questions = [
     "Property prices in Maitama?",
-    "How to get a C of O?",
     "Best investment strategy?",
-    "How to verify a title?",
+    "How to get a C of O?",
     "Rental yields in Lekki?",
+    "How to verify a title?",
     "How does mortgage work?",
     "What is a REIT?",
-    "How is property valued?",
+    "Short-let vs long-term rental?",
 ]
 for q in sample_questions:
-    if st.sidebar.button(q, key=q):
-        st.session_state.selected_question = q
+    if st.sidebar.button(q, key=f"btn_{q}"):
+        st.session_state.pending_question = q
 
 st.sidebar.markdown("---")
-st.sidebar.info("🔑 Connect Claude API for full AI analysis")
+st.sidebar.success("🤖 Claude AI Connected!")
 
-# ---- DATABASE ----
+# ---- DATABASE + CLAUDE ----
 DB_PATH = "./chroma_db"
 COLLECTION_NAME = "estateiq_nigeria_realestate"
 
 @st.cache_resource
-def get_rag_engine():
+def get_collection():
     try:
         client = chromadb.PersistentClient(path=DB_PATH)
-        collection = client.get_collection(name=COLLECTION_NAME)
-        return collection
+        return client.get_collection(name=COLLECTION_NAME)
     except Exception as e:
-        st.error(f"RAG Engine error: {e}")
+        st.error(f"Database error: {e}")
         return None
+
+@st.cache_resource
+def get_claude():
+    return anthropic.Anthropic(
+        api_key=os.getenv("ANTHROPIC_API_KEY")
+    )
 
 def search_docs(query, n_results=3):
-    collection = get_rag_engine()
+    collection = get_collection()
     if not collection:
         return None
-    return collection.query(query_texts=[query], n_results=n_results)
+    return collection.query(
+        query_texts=[query],
+        n_results=n_results
+    )
 
-def generate_answer(query, results):
-    docs = results["documents"][0]
-    metas = results["metadatas"][0]
+def ask_estateiq(question, results):
+    context = ""
+    for i, (doc, meta) in enumerate(zip(
+        results["documents"][0],
+        results["metadatas"][0]
+    )):
+        context += f"\n--- Source {i+1}: {meta['title']} ---\n"
+        context += f"Category: {meta['category']}\n"
+        context += f"Content: {doc[:700]}\n"
 
-    answer = f"Here's what I found about **'{query}'** in the Nigerian real estate market:\n\n"
+    claude = get_claude()
+    message = claude.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1024,
+        system="""You are EstateIQ, an expert AI real estate assistant 
+specializing in the Nigerian property market. You work for Fred Baker's Automations,
+a Nigerian AI company based in Abuja.
 
-    for i, (doc, meta) in enumerate(zip(docs, metas)):
-        answer += f"**{meta['title']}** ({meta['category']})\n"
-        answer += f"*Source: {meta['source']}*\n\n"
-        content = doc.replace(meta['title'], '').strip()[:400]
-        answer += f"{content}...\n\n"
-        if i < len(docs) - 1:
-            answer += "---\n\n"
+Your personality:
+- Professional but friendly
+- Data-driven with specific Nigerian prices and yields
+- Always practical and actionable
+- Reference specific Nigerian laws and regulations
+- Use ₦ for naira amounts
+- Format responses with clear headers and tables where helpful""",
+        messages=[
+            {
+                "role": "user",
+                "content": f"""Use this Nigerian real estate knowledge base to answer:
 
-    answer += "\n\n⚠️ *Preview response. Connect Claude API for comprehensive AI-powered real estate analysis.*"
-    return answer
+{context}
 
-# ---- CHAT ----
+Question: {question}
+
+Provide a comprehensive, accurate answer about the Nigerian property market.
+Include specific prices, yields, and actionable recommendations."""
+            }
+        ]
+    )
+    return message.content[0].text
+
+# ---- CHAT INTERFACE ----
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
             "role": "assistant",
-            "content": """Hello! I'm **EstateIQ**, your Nigerian real estate AI assistant! 🏢
+            "content": """Hello! I'm **EstateIQ** 🏢 — your Nigerian real estate AI assistant, powered by Claude AI.
 
-I can help you with:
-- 📍 Property prices in Abuja and Lagos
-- 📋 Certificate of Occupancy (C of O) process
-- 💰 Investment strategies and rental yields
-- ✅ Due diligence and title verification
-- 🏦 Mortgage options and financing
-- 📊 Property valuation methods
-- 🏗️ PropTech platforms in Nigeria
+I have deep knowledge of the Nigerian property market including:
+- 📍 **Abuja & Lagos** property prices by district
+- 📋 **C of O** process and title verification
+- 💰 **Investment strategies** with real yield data
+- 🏦 **Mortgage options** including Federal Mortgage Bank rates
+- 📊 **Rental yields** across major Nigerian cities
+- 🏗️ **Due diligence** checklists for safe property purchase
+
+I'm powered by **real Nigerian market data** and **Claude AI** for comprehensive analysis.
 
 **What real estate question can I help you with today?**"""
         }
     ]
 
-# Handle sidebar question
-if "selected_question" in st.session_state:
-    question = st.session_state.selected_question
-    del st.session_state.selected_question
-    st.session_state.messages.append({"role": "user", "content": question})
+# Handle pending question from sidebar
+if "pending_question" in st.session_state:
+    question = st.session_state.pending_question
+    del st.session_state.pending_question
+
+    st.session_state.messages.append({
+        "role": "user",
+        "content": question
+    })
+
     results = search_docs(question)
     if results:
-        answer = generate_answer(question, results)
-        st.session_state.messages.append({"role": "assistant", "content": answer})
+        with st.spinner("EstateIQ is analyzing Nigerian market data..."):
+            answer = ask_estateiq(question, results)
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": answer,
+            "sources": results["metadatas"][0]
+        })
 
 # Display chat history
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+        if message["role"] == "assistant" and "sources" in message:
+            with st.expander("📚 Sources Used"):
+                for meta in message["sources"]:
+                    st.markdown(f"""
+                    <div class="source-card">
+                        <strong>🏢 {meta['title']}</strong><br>
+                        <small>{meta['category']} | {meta['source']}</small>
+                    </div>
+                    """, unsafe_allow_html=True)
 
 # Chat input
-if prompt := st.chat_input("Ask a Nigerian real estate question..."):
-    st.session_state.messages.append({"role": "user", "content": prompt})
+if prompt := st.chat_input("Ask about Nigerian real estate..."):
+    st.session_state.messages.append({
+        "role": "user",
+        "content": prompt
+    })
     with st.chat_message("user"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        with st.spinner("Searching Nigerian real estate database..."):
+        with st.spinner("🏢 EstateIQ analyzing Nigerian market data..."):
             results = search_docs(prompt)
             if results:
-                answer = generate_answer(prompt, results)
+                answer = ask_estateiq(prompt, results)
                 st.markdown(answer)
 
                 with st.expander("📚 Sources Used"):
@@ -173,16 +240,19 @@ if prompt := st.chat_input("Ask a Nigerian real estate question..."):
                         st.markdown(f"""
                         <div class="source-card">
                             <strong>🏢 {meta['title']}</strong><br>
-                            Category: {meta['category']}<br>
-                            Source: {meta['source']}
+                            <small>{meta['category']} | {meta['source']}</small>
                         </div>
                         """, unsafe_allow_html=True)
 
                 st.session_state.messages.append({
                     "role": "assistant",
-                    "content": answer
+                    "content": answer,
+                    "sources": results["metadatas"][0]
                 })
             else:
-                answer = "I couldn't find relevant information. Please try rephrasing."
+                answer = "I couldn't find relevant information. Please try rephrasing your question."
                 st.markdown(answer)
-                st.session_state.messages.append({"role": "assistant", "content": answer})
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": answer
+                })
