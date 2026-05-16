@@ -625,6 +625,26 @@ footer {
   footer { padding: 2rem 1.5rem; }
 }
 </style>
+<!-- SEO Meta Tags -->
+<meta name="description" content="Fred Baker's Automations — Nigeria's leading AI automation company. AI solutions for law firms (LexAI), real estate (EstateIQ), and oil & gas (OpsGuard). Based in Abuja, Nigeria.">
+<meta name="keywords" content="AI Nigeria, LexAI, EstateIQ, OpsGuard, Nigerian law AI, real estate AI Nigeria, oil gas AI Nigeria, Abuja AI company, Fred Baker's Automations">
+<meta name="author" content="Chika Alfred, Fred Baker's Automations">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph for WhatsApp/LinkedIn sharing -->
+<meta property="og:title" content="Fred Baker's Automations — Nigeria's Leading AI Company">
+<meta property="og:description" content="AI solutions for Nigerian law firms, real estate, and oil & gas. Try LexAI, EstateIQ, and OpsGuard FREE today.">
+<meta property="og:url" content="https://fredbakersautomations.com.ng">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fred Baker's Automations — Nigeria's Leading AI Company">
+<meta name="twitter:description" content="AI solutions for Nigerian businesses. LexAI, EstateIQ, OpsGuard. Based in Abuja.">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://fredbakersautomations.com.ng">
 </head>
 <body>
 
@@ -949,6 +969,81 @@ document.querySelectorAll('.product-card, .why-card, .step, .sector-card').forEa
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+</script>
+<!-- WhatsApp Chat Widget -->
+<div id="whatsapp-widget" style="
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+">
+  <div id="chat-bubble" style="
+    background: #111111;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    max-width: 280px;
+    display: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  ">
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.8rem;">
+      <div style="width:40px;height:40px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;">👨🏾‍💼</div>
+      <div>
+        <div style="font-family:'Cinzel',serif;font-size:13px;color:#E2C97E;">Chika Alfred</div>
+        <div style="font-size:11px;color:#4CAF7A;font-family:'JetBrains Mono',monospace;">● Online</div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:#9A9080;margin-bottom:1rem;font-family:'Cormorant Garamond',serif;">
+      Hello! 👋 I'm Chika from Fred Baker's Automations. How can I help you today?
+    </p>
+    <a href="https://wa.me/2348086632976?text=Hello%20Chika%2C%20I%20visited%20fredbakersautomations.com.ng%20and%20I%27m%20interested%20in%20your%20AI%20products." 
+       target="_blank"
+       style="
+         display:block;
+         background:#25D366;
+         color:white;
+         text-align:center;
+         padding:0.7rem;
+         border-radius:6px;
+         text-decoration:none;
+         font-family:'Cinzel',serif;
+         font-size:13px;
+         font-weight:700;
+       ">
+      💬 Start WhatsApp Chat
+    </a>
+  </div>
+
+  <button onclick="toggleChat()" style="
+    background: #25D366;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+  ">💬</button>
+</div>
+
+<script>
+function toggleChat() {
+  const bubble = document.getElementById('chat-bubble');
+  bubble.style.display = bubble.style.display === 'none' ? 'block' : 'none';
+}
+
+// Show chat bubble after 3 seconds
+setTimeout(() => {
+  document.getElementById('chat-bubble').style.display = 'block';
+}, 3000);
 </script>
 
 </body>
