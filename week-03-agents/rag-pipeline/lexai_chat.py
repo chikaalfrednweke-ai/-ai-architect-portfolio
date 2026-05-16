@@ -107,19 +107,68 @@ DB_PATH = "./chroma_db"
 COLLECTION_NAME = "lexai_nigeria_legal"
 
 @st.cache_resource
+@st.cache_resource
 def get_collection():
     try:
+        # Try loading existing collection
         client = chromadb.PersistentClient(path=DB_PATH)
-        return client.get_collection(name=COLLECTION_NAME)
+        collection = client.get_or_create_collection(name=COLLECTION_NAME)
+        
+        # If empty, load documents
+        if collection.count() == 0:
+            load_legal_docs(collection)
+        return collection
     except Exception as e:
         st.error(f"Database error: {e}")
         return None
 
+def load_legal_docs(collection):
+    docs = [
+        ("cac_001", "CAC Company Registration Requirements",
+         "To register a company in Nigeria with CAC: minimum two shareholders, share capital N100,000, at least one director, registered office address in Nigeria, Memorandum and Articles of Association, Form CAC 1.1, valid ID for directors and shareholders, TIN for corporate shareholders. Registration takes 1-2 weeks, costs N10,000-N50,000. Annual returns must be filed within 42 days of incorporation anniversary.",
+         "Company Law", "CAC Act 2020"),
+        ("contract_001", "Contract Formation Under Nigerian Law",
+         "Valid Nigerian contract requires: Offer, Acceptance, Consideration, Capacity (18+, sound mind), Intention to create legal relations, Legality. Written contracts preferred but oral enforceable. Statute of Frauds requires writing for: land contracts, contracts over one year, guarantees. Remedies: damages, specific performance, injunction.",
+         "Contract Law", "Nigerian Contract Law"),
+        ("employment_001", "Employment Law in Nigeria",
+         "Labour Act Cap L1 LFN 2004: Minimum wage N70,000/month (2024), 8 hours/day max, 6 days annual leave after 12 months, 1 month notice period. Rights: written contract, safe conditions, union membership, anti-discrimination, 12 weeks maternity leave. Wrongful dismissal: reinstatement or compensation available.",
+         "Employment Law", "Labour Act Cap L1 LFN 2004"),
+        ("ndpr_001", "NDPR Data Protection Compliance",
+         "NDPR 2019 administered by NITDA. Requirements: lawful basis for processing, data subject rights (access, rectification, erasure, portability), privacy policy, Data Protection Officer, annual audit, breach notification within 72 hours. Penalties: 2% annual revenue or N10 million. Register with NITDA if processing 1000+ data subjects annually.",
+         "Data Protection", "NDPR 2019"),
+        ("tax_001", "Corporate Tax Obligations in Nigeria",
+         "FIRS taxes: Companies Income Tax 30% large, 20% medium, 0% small (under N25M turnover), VAT 7.5%, Withholding Tax 5-10%, Capital Gains Tax 10%, Stamp Duties. Deadlines: CIT 6 months after year end, VAT 21st of following month. Incentives: Pioneer status 3-5 year holiday, export grants, investment allowances.",
+         "Tax Law", "CITA Cap C21 LFN 2004"),
+        ("cama_001", "CAMA 2020 Companies and Allied Matters Act",
+         "CAMA 2020 reforms: Single member companies allowed, electronic CAC filing, simplified share capital reduction, enhanced minority shareholder protection, small companies no longer need company secretary. Director duties: good faith, avoid conflicts, declare interests. Penalties: N100,000 plus N5,000 per day for late annual returns.",
+         "Company Law", "CAMA 2020"),
+        ("ip_001", "Intellectual Property Rights in Nigeria",
+         "Copyright: automatic protection, life plus 70 years, Nigerian Copyright Commission. Trademarks: registration required, 7 years renewable, Trademarks Registry. Patents: 20 years, must be new and inventive. Industrial Designs: 5 years renewable to 15 years. Enforcement: Federal High Court exclusive jurisdiction.",
+         "Intellectual Property", "Copyright Act 2022"),
+        ("dispute_001", "Commercial Dispute Resolution in Nigeria",
+         "Options: Federal High Court (above N25M), State High Courts, Lagos Court of Arbitration, mediation via Lagos Multi-Door Courthouse. Arbitration Act Cap A18 LFN 2004. Limitation periods: contracts 6 years, torts 3 years, land 12 years. ADR preferred for commercial disputes, settlements binding and enforceable.",
+         "Dispute Resolution", "Arbitration Act Cap A18 LFN 2004"),
+        ("cybercrime_001", "Cybercrime Act 2015 Digital Offences Nigeria",
+         "Cybercrimes Act 2015 offences: Unauthorized access 3 years or N7M, Identity theft 7 years or N5M, Online fraud 7 years minimum with asset forfeiture, ATM fraud 7 years and N5M. Business obligations: report suspicious transactions, retain customer data 2 years, implement cybersecurity measures, cooperate with law enforcement.",
+         "Cybercrime Law", "Cybercrimes Act 2015"),
+        ("property_001", "Land Ownership and Title in Nigeria",
+         "Land Use Act 1978: all land vested in State Governors. Types: Statutory Right of Occupancy, Customary Right of Occupancy, Certificate of Occupancy (C of O). C of O process: survey land, apply at Land Bureau, pay fees, 3-12 months. Due diligence: verify at Land Registry, check encumbrances, confirm Governor's consent for transfers.",
+         "Property Law", "Land Use Act 1978"),
+    ]
+    
+    ids = [d[0] for d in docs]
+    texts = [f"{d[1]}\n\n{d[2]}" for d in docs]
+    metadatas = [{"title": d[1], "category": d[3], "source": d[4]} for d in docs]
+    
+    collection.upsert(ids=ids, documents=texts, metadatas=metadatas)
+
 @st.cache_resource
 def get_claude():
-    return anthropic.Anthropic(
-        api_key=os.getenv("ANTHROPIC_API_KEY")
-    )
+    try:
+        api_key = st.secrets["ANTHROPIC_API_KEY"]
+    except:
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+    return anthropic.Anthropic(api_key=api_key)
 
 def search_docs(query, n_results=3):
     collection = get_collection()
