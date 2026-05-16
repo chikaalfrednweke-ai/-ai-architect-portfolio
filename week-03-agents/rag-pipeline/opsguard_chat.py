@@ -150,7 +150,7 @@ def load_realestate_docs(collection):
     metadatas = [{"title": d[1], "category": d[3], "source": d[4]} for d in docs]
     collection.upsert(ids=ids, documents=texts, metadatas=metadatas)
 
-@st.cache_resource
+
 def get_claude():
     try:
         api_key = st.secrets["ANTHROPIC_API_KEY"]
